@@ -9,10 +9,18 @@ try {
     EnableSsl = true,
     DeliveryMethod = SmtpDeliveryMethod.Network,
     UseDefaultCredentials = false,
-    Credentials = new NetworkCredential("tarrskp@gmail.com", Environment.GetEnvironmentVariable("SENHA"))
+    Credentials = new NetworkCredential(
+      Environment.GetEnvironmentVariable("FROM_EMAIL"),
+      Environment.GetEnvironmentVariable("PASSWORD")
+    )
   };
   
-  smtp.Send("tarrskp@gmail.com", "gubork@gmail.com", "Teste", "Teste de envio de E-Mail");
+  smtp.Send(
+    Environment.GetEnvironmentVariable("FROM_EMAIL"),
+    Environment.GetEnvironmentVariable("TO_EMAIL"),
+    "Teste",
+    "Teste de envio de E-Mail"
+  );
 } catch (SmtpException ex) {
   Console.WriteLine(ex.ToString());
 }

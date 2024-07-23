@@ -1,8 +1,13 @@
 # EmailSample
-Código simples para envio de E-Mail
+A sample .NET 6 application that sends an email
 
-## Passos
-1. Baixar o repositório
-2. No terminal, digitar `dotnet restore`
-3. Criar um arquivo chamado **.env**
-4. Colocar uma variável **SENHA** e atribuir uma senha válida
+## Steps
+1. Clone the repository
+2. Type `dotnet restore` on the terminal (if you have .NET 6 SDK installed)
+3. Create a **.env** file (due to the .gitignore, it won't be given as untracked)
+4. Put the following variables in the file:
+```
+FROM_EMAIL="from who the email will be sent"
+PASSWORD="password of the sender"
+TO_EMAIL="to who the email will be sent"
+```
